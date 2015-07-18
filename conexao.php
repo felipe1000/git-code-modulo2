@@ -1,4 +1,4 @@
-<?php
+    <?php
 try{
 	$conexao = new \PDO("mysql:host=localhost;dbname=pdo","root","");
 	
@@ -16,4 +16,11 @@ $stmt->execute();
 $clientes = $stmt->fetch(PDO::FETCH_ASSOC);
 
 print_r($clientes);
+
+foreach($clientes as $cliente){
+
+	echo $cliente['nome']." - ".$cliente['email']."<br>";
+
+}
+
 ?>
